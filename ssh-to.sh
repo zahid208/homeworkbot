@@ -1,12 +1,12 @@
 #!/bin/bash
 
 jordan() {
-  ssh deploy@64.227.77.117
+  ssh deploy@159.65.164.59
 }
 
 deploy() {
   echo '----> starting deployment for elahi'
-  cap elahi deploy
+  cap jordan deploy
   echo '----> elahi deployment finished <--------'
 }
 

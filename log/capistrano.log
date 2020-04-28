@@ -1,0 +1,5 @@
+# Logfile created on 2020-04-28 23:44:11 +0500 by logger.rb/61378
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-28 23:44:11 +0500 cap jordan deploy
+  INFO ---------------------------------------------------------------------------
+  INFO rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv

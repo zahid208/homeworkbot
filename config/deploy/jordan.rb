@@ -1,6 +1,6 @@
 lock "~> 3.11.0"
 
-server '167.71.5.84', port: 22, roles: [:web, :app, :db], primary: true
+server '159.65.164.59', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:sikandartariq1/homework-bot.git'
 set :application,     'homeworkbot'
