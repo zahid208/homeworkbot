@@ -1,0 +1,2 @@
+=== puma startup: 2020-04-12 10:40:58 +0000 ===
+* Listening on unix:///home/deploy/apps/homeworkbot/shared/tmp/sockets/homeworkbot-puma.sock

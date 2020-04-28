@@ -1,0 +1,189 @@
+  [1m[35m (1646.5ms)[0m  [1m[35mCREATE DATABASE "homeworkbot_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (510.3ms)[0m  [1m[35mCREATE DATABASE "homeworkbot_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (67.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (25.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4250330452628636565)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAssignments (20190202055221)
+  [1m[35m (12.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" bigserial primary key, "title" character varying, "body" character varying, "bid" boolean, "price" float, "link" character varying, "slug" character varying, "field" character varying, "bid_accepted" boolean, "accepted_price" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190202055221_create_assignments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190202055221"]]
+  ↳ bin/rails:9
+  [1m[35m (39.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateAdminUsers (20190209055854)
+  [1m[35m (6.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190209055854_devise_create_admin_users.rb:5
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  ↳ db/migrate/20190209055854_devise_create_admin_users.rb:39
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  ↳ db/migrate/20190209055854_devise_create_admin_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190209055854"]]
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateActiveAdminComments (20190209055857)
+  [1m[35m (12.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190209055857_create_active_admin_comments.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  ↳ db/migrate/20190209055857_create_active_admin_comments.rb:3
+  [1m[35m (44.4ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  ↳ db/migrate/20190209055857_create_active_admin_comments.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  ↳ db/migrate/20190209055857_create_active_admin_comments.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190209055857"]]
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAccounts (20190209084313)
+  [1m[35m (7.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" bigserial primary key, "title" character varying, "email" character varying, "password" character varying, "bid_content" text, "admin_user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190209084313_create_accounts.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_accounts_on_admin_user_id" ON "accounts"  ("admin_user_id")[0m
+  ↳ db/migrate/20190209084313_create_accounts.rb:3
+  [1m[35m (82.7ms)[0m  [1m[35mALTER TABLE "accounts" ADD CONSTRAINT "fk_rails_0b0a68e4e3"
+FOREIGN KEY ("admin_user_id")
+  REFERENCES "admin_users" ("id")
+ ON DELETE CASCADE[0m
+  ↳ db/migrate/20190209084313_create_accounts.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "assignments" ADD "account_id" bigint[0m
+  ↳ db/migrate/20190209084313_create_accounts.rb:14
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_assignments_on_account_id" ON "assignments"  ("account_id")[0m
+  ↳ db/migrate/20190209084313_create_accounts.rb:14
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "assignments" ADD CONSTRAINT "fk_rails_ef559829ad"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+ ON DELETE CASCADE[0m
+  ↳ db/migrate/20190209084313_create_accounts.rb:15
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190209084313"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddPidToAccounts (20190209121336)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "accounts" ADD "pid" integer[0m
+  ↳ db/migrate/20190209121336_add_pid_to_accounts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190209121336"]]
+  ↳ bin/rails:9
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddNotificationsToAccounts (20190303181246)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "accounts" ADD "notifications" integer DEFAULT 0[0m
+  ↳ db/migrate/20190303181246_add_notifications_to_accounts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190303181246"]]
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddChannelNameToAccounts (20190314184450)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "accounts" ADD "channel" character varying DEFAULT 'homeworkmarket'[0m
+  ↳ db/migrate/20190314184450_add_channel_name_to_accounts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190314184450"]]
+  ↳ bin/rails:9
+  [1m[35m (18.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateFilters (20190316093255)
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (27.8ms)[0m  [1m[35mCREATE TABLE "filters" ("id" bigserial primary key, "account_id" bigint, "filter_type" integer DEFAULT 0, "condition" integer DEFAULT 0, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190316093255_create_filters.rb:3
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE  INDEX  "index_filters_on_account_id" ON "filters"  ("account_id")[0m
+  ↳ db/migrate/20190316093255_create_filters.rb:3
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "filters" ADD CONSTRAINT "fk_rails_ce8f43166d"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+ ON DELETE CASCADE[0m
+  ↳ db/migrate/20190316093255_create_filters.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190316093255"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDevelopers (20190421145803)
+  [1m[35m (5.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (22.6ms)[0m  [1m[35mCREATE TABLE "developers" ("id" bigserial primary key, "full_name" character varying, "phone" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190421145803_create_developers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190421145803"]]
+  ↳ bin/rails:9
+  [1m[35m (67.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeveloperToAssignments (20190421150456)
+  [1m[35m (7.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "assignments" ADD "developer_price" float[0m
+  ↳ db/migrate/20190421150456_add_developer_to_assignments.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "assignments" ADD "due_date" timestamp[0m
+  ↳ db/migrate/20190421150456_add_developer_to_assignments.rb:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "assignments" ADD "developer_id" bigint[0m
+  ↳ db/migrate/20190421150456_add_developer_to_assignments.rb:5
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE  INDEX  "index_assignments_on_developer_id" ON "assignments"  ("developer_id")[0m
+  ↳ db/migrate/20190421150456_add_developer_to_assignments.rb:5
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "assignments" ADD CONSTRAINT "fk_rails_313514df4b"
+FOREIGN KEY ("developer_id")
+  REFERENCES "developers" ("id")
+[0m
+  ↳ db/migrate/20190421150456_add_developer_to_assignments.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190421150456"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateTransactions (20190927191731)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "processed_at" timestamp, "payment_id" character varying, "reference_link" character varying, "event" character varying, "amount" float, "change" float, "balance" float, "account_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190927191731_create_transactions.rb:3
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_account_id" ON "transactions"  ("account_id")[0m
+  ↳ db/migrate/20190927191731_create_transactions.rb:3
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "transactions" ADD CONSTRAINT "fk_rails_01f020e267"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+ ON DELETE CASCADE[0m
+  ↳ db/migrate/20190927191731_create_transactions.rb:15
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190927191731"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddStringTimeKeyToTransactions (20190929150125)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "transactions" ADD "string_time_key" character varying[0m
+  ↳ db/migrate/20190929150125_add_string_time_key_to_transactions.rb:3
+  [1m[35m (5.6ms)[0m  [1m[35mALTER TABLE "accounts" ADD "last_calculated_page" integer DEFAULT 1[0m
+  ↳ db/migrate/20190929150125_add_string_time_key_to_transactions.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190929150125"]]
+  ↳ bin/rails:9
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (6.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-27 18:39:06.426864"], ["updated_at", "2020-04-27 18:39:06.426864"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4250330452628636565)[0m
+  ↳ bin/rails:9
+  [1m[35m (12.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/bidding.rake:5
+  [1m[36mAccount Load (1.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/bidding.rake:5

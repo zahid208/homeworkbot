@@ -1,0 +1,17 @@
+=== puma startup: 2020-04-12 10:40:58 +0000 ===
+2020-04-13 01:34:18 +0000: HTTP parse error, malformed request (127.0.0.1): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2020-04-14 04:57:03 +0000: HTTP parse error, malformed request (127.0.0.1): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2020-04-16 12:35:23 +0000: HTTP parse error, malformed request (127.0.0.1): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2020-04-17 08:48:49 +0000: HTTP parse error, malformed request (127.0.0.1): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2020-04-18 18:37:46 +0000: HTTP parse error, malformed request (127.0.0.1): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2020-04-21 07:52:17 +0000: HTTP parse error, malformed request (127.0.0.1): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2020-04-22 10:18:46 +0000: HTTP parse error, malformed request (127.0.0.1): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2020-04-23 08:46:15 +0000: HTTP parse error, malformed request (127.0.0.1): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
