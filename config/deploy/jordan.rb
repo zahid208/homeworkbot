@@ -2,7 +2,7 @@ lock "~> 3.11.0"
 
 server '159.65.164.59', port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:sikandartariq1/homework-bot.git'
+set :repo_url,        'git@github.com:Iammohammadali/homeworkmarketbot.git'
 set :application,     'homeworkbot'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
