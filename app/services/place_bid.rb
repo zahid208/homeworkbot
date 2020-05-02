@@ -23,7 +23,7 @@ class PlaceBid
         #   session.find('.msg-form .send-button').click
         # end
       else
-        session.find(".teacher-question .btn-primary").click
+        session.find(".teacher-question .btn-primary")[0].click
         if session.has_css?(".Popover-body", wait: 2)
           inputs = session.all('.form-control')
           inputs[1].set(price(inputs[0].value))
