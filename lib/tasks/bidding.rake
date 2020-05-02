@@ -33,8 +33,8 @@ namespace :automate do
         end
       end
 
-      if session.has_css?(".activities .total-unread-message-count")
-        notifications = session.find('.activities .total-unread-message-count').text.to_i
+      if session.has_xpath?('//*[@id="header"]/div/div[1]/div[2]/ul/li[1]/div/div/div/a/span[2]')
+        notifications = session.first('.activities .total-unread-message-count', minimum: 1).text.to_i
         Notifications.slack!(body: "#{account.title} notification Total: #{notifications}", channel: account.channel)  if notifications > account.notifications
         account.update(notifications: notifications) unless notifications == account.notifications
         puts "Total notifications: #{notifications}"
